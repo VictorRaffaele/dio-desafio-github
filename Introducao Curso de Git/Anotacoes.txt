@@ -1,0 +1,7 @@
+Passos até aqui:
+1. Criar repositorio no Github;
+2. Realizar clone do repositorio usando comando: git clone "link repositorio" ;
+3. Criar bloco para anotações;
+4. Utilizar comando: git add . ,para adicionar anotações no repositorio local;
+5. Utilizar comando: git commit -m "mensagem" , para adicionar comentario sobre novo arquivo;
+6. Utilizar comando: git push , para fazer upload do commit para repositorio remoto.
