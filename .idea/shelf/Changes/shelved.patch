@@ -1,0 +1,191 @@
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1645802134588)
++++ b/.idea/modules.xml	(date 1645802134588)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/primeiro-programa.iml" filepath="$PROJECT_DIR$/primeiro-programa.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1645804389397)
++++ b/.idea/vcs.xml	(date 1645804389397)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: src/PrimeiroPrograma.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/PrimeiroPrograma.java b/src/PrimeiroPrograma.java
+new file mode 100644
+--- /dev/null	(date 1645803865841)
++++ b/src/PrimeiroPrograma.java	(date 1645803865841)
+@@ -0,0 +1,21 @@
++import model.Gato;
++public class PrimeiroPrograma {
++
++    public static void main(String[] args){
++        /*
++        int a = 5;
++        int b = 3;
++        System.out.println(a+b);
++        */
++
++        Gato gato = new Gato();
++        gato.setNome("Pimpy");
++        gato.setCor("Preto e Branco");
++        gato.setIdade(3);
++
++
++
++        System.out.println("Nome: " + gato.getNome() + "\n" + "Cor: " + gato.getCor() + "\n" + "Idade:" + gato.getIdade() );
++    }
++
++}
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1645802134655)
++++ b/.idea/misc.xml	(date 1645802134655)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1645802170602)
++++ b/.idea/.gitignore	(date 1645802170602)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: primeiro-programa.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/primeiro-programa.iml b/primeiro-programa.iml
+new file mode 100644
+--- /dev/null	(date 1645802134397)
++++ b/primeiro-programa.iml	(date 1645802134397)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: src/model/Gato.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/model/Gato.java b/src/model/Gato.java
+new file mode 100644
+--- /dev/null	(date 1645803663427)
++++ b/src/model/Gato.java	(date 1645803663427)
+@@ -0,0 +1,62 @@
++package model;
++
++import java.util.Objects;
++
++public class Gato {
++
++    private String nome;
++    private String cor;
++    private Integer idade;
++
++    public Gato() {
++        this.nome = nome;
++        this.cor = cor;
++        this.idade = idade;
++    }
++
++    public String getNome() {
++        return nome;
++    }
++
++    public void setNome(String nome) {
++        this.nome = nome;
++    }
++
++    public String getCor() {
++        return cor;
++    }
++
++    public void setCor(String cor) {
++        this.cor = cor;
++    }
++
++    public Integer getIdade() {
++        return idade;
++    }
++
++    public void setIdade(Integer idade) {
++        this.idade = idade;
++    }
++
++    @Override
++    public boolean equals(Object o) {
++        if (this == o) return true;
++        if (o == null || getClass() != o.getClass()) return false;
++        Gato gato = (Gato) o;
++        return Objects.equals(nome, gato.nome) && Objects.equals(cor, gato.cor) && Objects.equals(idade, gato.idade);
++    }
++
++    @Override
++    public int hashCode() {
++        return Objects.hash(nome, cor, idade);
++    }
++
++    @Override
++    public String toString() {
++        return "Gato{" +
++                "nome='" + nome + '\'' +
++                ", cor='" + cor + '\'' +
++                ", idade=" + idade +
++                '}';
++    }
++}
