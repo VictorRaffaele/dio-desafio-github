@@ -3,6 +3,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.lang.model.util.ElementScanner6;
+
 public class TemperaturaMedia{
     protected List<Double> entradas;
 
@@ -38,33 +40,23 @@ public class TemperaturaMedia{
 
     public void maioresMedia(List<Double> tempList, Double media){
         Iterator<Double> iterator2 = tempList.iterator();
+        int countPrint = 0;
 
         while(iterator2.hasNext()){
             Double proximoValor = iterator2.next();
+            countPrint++;
 
-            switch(tempList.indexOf(proximoValor)){
-                case 1:{
-                    System.out.printf("%s %.2f\n", "1 - Janeiro", proximoValor);
-                }
-                case 2:{
-                    System.out.printf("%s %.2f\n","2 - Fevereiro", proximoValor);
-                }
-                case 3:{
-                    System.out.printf("%s %.2f\n","3 - Marco", proximoValor);
-                }
-                case 4:{
-                    System.out.printf("%s %.2f\n","4 - Abril", proximoValor);
-                }
-                case 5:{
-                    System.out.printf("%s %.2f\n","5 - Maio", proximoValor);
-                }
-                case 6:{
-                    System.out.printf("%s %.2f\n","6 - Junho", proximoValor);
+            if(proximoValor > media){
+                if(countPrint == 1){System.out.printf("%s %.2f\n", "1 - Janeiro", proximoValor);}
+                else if(countPrint == 2){System.out.printf("%s %.2f\n","2 - Fevereiro", proximoValor);}
+                else if(countPrint == 3){System.out.printf("%s %.2f\n","3 - Marco", proximoValor);}
+                else if(countPrint == 4){System.out.printf("%s %.2f\n","4 - Abril", proximoValor);}
+                else if(countPrint == 5){System.out.printf("%s %.2f\n","5 - Maio", proximoValor);}
+                else if(countPrint == 6){System.out.printf("%s %.2f\n","6 - Junho", proximoValor);}
                 }
             }
                 
         }
-    }
 
     public List<Double> getEntradas() {
         return this.entradas;
