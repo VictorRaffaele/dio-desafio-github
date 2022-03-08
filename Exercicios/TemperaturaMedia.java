@@ -3,8 +3,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-import javax.lang.model.util.ElementScanner6;
-
 public class TemperaturaMedia{
     protected List<Double> entradas;
 
